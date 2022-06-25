@@ -95,6 +95,7 @@ public class SocketClient {
         char[] header = new char[HEADER];
         try {
             connInput.read(header);  // recebe o header
+            // este método modifica o reader e retorna o número de caracteres lidos
             int buffer = Integer.parseInt(String.valueOf(header));
             // extrai do cabeçalho o valor do buffer
             char[] msg = new char[buffer];  // cria o valor buffer
