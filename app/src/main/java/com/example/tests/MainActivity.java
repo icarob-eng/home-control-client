@@ -1,6 +1,7 @@
 package com.example.tests;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,13 +9,23 @@ import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.tests.adapter.RelaysAdapter;
+import com.example.tests.model.RelayModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private EditText fieldIP, fieldPort;
-    private Button btnClear, btnReset, btnPing, btnLED, btnRelay1, btnRelay2, btnNw;
+    private Button btnReset, btnPing, btnLED;
+    private ImageButton btnNw;
+    private ImageButton btnClear;
     private TextView txtOutput;
+    private RecyclerView recyclerRelays;
+    private List<RelayModel> listaRelay = new ArrayList<RelayModel>();
     private static SocketClient socketClient; // static para ser recuperável
 
     public static SocketClient getSocketClient(){ return socketClient; }
@@ -25,22 +36,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        fieldIP = findViewById(R.id.fieldIP);
-        fieldPort = findViewById(R.id.fieldPort);
+        fieldIP = findViewById(R.id.edit_ip);
+        fieldPort = findViewById(R.id.edit_port);
 
-        txtOutput = findViewById(R.id.txtOutput);
+        txtOutput = findViewById(R.id.txt_output);
         txtOutput.setMovementMethod(new ScrollingMovementMethod());  // configura scrolling
 
-        btnReset = findViewById(R.id.btnReset);
-        btnPing = findViewById(R.id.btnPing);
-        btnLED = findViewById(R.id.btnLED);
-        btnRelay1 = findViewById(R.id.btnRelay1);
-        btnRelay2 = findViewById(R.id.btnRelay2);
-        btnClear = findViewById(R.id.btnClear);
-        btnNw = findViewById(R.id.btnNw);
+        btnReset = findViewById(R.id.btn_reset);
+        btnPing = findViewById(R.id.btn_ping);
+        btnLED = findViewById(R.id.btn_LED);
+        btnClear = findViewById(R.id.btn_clear);
+        btnNw = findViewById(R.id.btn_nw);
 
         btnClear.setOnClickListener(v -> clearTerminal());
 
+        setupRecycler();
         setupSocket();
     }
 
@@ -59,8 +69,6 @@ public class MainActivity extends AppCompatActivity {
         btnReset.setOnClickListener(v -> new Thread(socketClient::actionReset).start());
         btnPing.setOnClickListener(v -> new Thread(socketClient::actionPing).start());
         btnLED.setOnClickListener(v -> new Thread(socketClient::actionLED).start());
-        btnRelay1.setOnClickListener(v -> new Thread(() -> socketClient.actionRelay(1)).start());
-        btnRelay2.setOnClickListener(v -> new Thread(() -> socketClient.actionRelay(2)).start());
 
         btnNw.setOnClickListener(v -> startActivity(
                 new Intent(MainActivity.this,NetworkSetup.class))
@@ -70,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     public void print(String text){
         // pequeno wrapper para adiconar linhas na output
         // precisa ser na Thread de UI para não lançar erro de threads
-        runOnUiThread(() -> txtOutput.append("\n>" + text));
+        runOnUiThread(() -> txtOutput.append("\n > " + text));
         // todo: adcionar horários nos logs
     }
 
@@ -91,6 +99,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clearTerminal(){
-        runOnUiThread(() -> txtOutput.setText(""));
+        runOnUiThread(() -> txtOutput.setText(" > "));
+    }
+
+    private void setupRecycler() {
+
+        RelaysAdapter relaysAdapter = new RelaysAdapter(listaRelay);
+        recyclerRelays = findViewById(R.id.recycler_relays);
+        recyclerRelays.setAdapter(relaysAdapter);
+        recyclerRelays.setHasFixedSize(true);
+
     }
 }
