@@ -1,21 +1,25 @@
 package com.example.tests.model;
 
-import com.example.tests.MainActivity;
 
-public class RelayModel {
-    private int id;
+import com.example.tests.activities.MainActivity;
+
+import java.io.Serializable;
+
+public class RelayModel implements Serializable {
+    private Long id;
     private String nome;
 
-    public RelayModel(int id, String nome) {
+    public RelayModel() {}
+    public RelayModel(Long id, String nome) {
         this.id = id;
         this.nome = nome;
     }
 
-    public int getId() {
-        return id;
+    public Long getId() {
+        return this.id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
