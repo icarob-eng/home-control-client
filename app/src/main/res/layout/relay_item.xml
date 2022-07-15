@@ -6,7 +6,7 @@
     android:layout_margin="10dp"
     android:elevation="20dp">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -18,27 +18,53 @@
             <TextView
                 android:id="@+id/relay_nome"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="nome"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:layout_margin="20dp"
+                android:layout_weight="70"
                 android:gravity="center_vertical"/>
             <TextView
                 android:id="@+id/relay_id"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="id"
-                android:textSize="30sp"
+                android:textSize="15sp"
                 android:layout_margin="10dp"
-                android:gravity="center_vertical"/>
+                android:layout_weight="30"
+                android:layout_gravity="center"
+                android:textAlignment="center"/>
 
         </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/relay_button"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_baseline_wifi_24"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/relay_button"
+                android:layout_width="wrap_content"
+                android:layout_weight="33"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_baseline_wifi_24"/>
+
+            <ImageButton
+                android:id="@+id/btn_editrelay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="33"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_baseline_edit_24"/>
+            <ImageButton
+                android:id="@+id/btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="33"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_baseline_delete_24"/>
+        </LinearLayout>
+
 
     </LinearLayout>
     </androidx.cardview.widget.CardView>

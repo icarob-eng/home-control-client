@@ -3,14 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/home-control-client/app/src/main/res/drawable/background_actions.xml" value="0.1" />
-        <entry key="..\:/home-control-client/app/src/main/res/drawable/ic_baseline_clean_24.xml" value="0.1775" />
-        <entry key="..\:/home-control-client/app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.1" />
-        <entry key="..\:/home-control-client/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1775" />
-        <entry key="..\:/home-control-client/app/src/main/res/layout/activity_add_relay.xml" value="0.22" />
-        <entry key="..\:/home-control-client/app/src/main/res/layout/activity_add_update.xml" value="0.1" />
-        <entry key="..\:/home-control-client/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/home-control-client/app/src/main/res/layout/relay_item.xml" value="0.22" />
+        <entry key="..\:/home-control-client/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.1775" />
+        <entry key="..\:/home-control-client/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/home-control-client/app/src/main/res/layout/relay_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.1078125" />
         <entry key="app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />

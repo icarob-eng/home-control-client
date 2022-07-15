@@ -86,7 +86,7 @@
         android:src="@drawable/ic_baseline_add_24"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_relays"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:orientation="horizontal"
