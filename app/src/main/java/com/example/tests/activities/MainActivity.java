@@ -71,6 +71,12 @@ public class MainActivity extends AppCompatActivity {
         new Thread(socketClient::testConn).start();
     }
 
+    private void setupRecycler() {
+        recyclerRelays = findViewById(R.id.recycler_relays);
+        recyclerRelays.setAdapter(relaysAdapter);
+        recyclerRelays.setHasFixedSize(true);
+    }
+
     private void setupSocket(){
         // inicia uma instância do SocketClient passando esta classe como argumento para poder
         // acessar o getter do ID
@@ -137,11 +143,5 @@ public class MainActivity extends AppCompatActivity {
 
         alert.create();
         alert.show();
-    }
-    private void setupRecycler() {
-
-        recyclerRelays = findViewById(R.id.recycler_relays);
-        recyclerRelays.setAdapter(relaysAdapter);
-        recyclerRelays.setHasFixedSize(true);
     }
 }
