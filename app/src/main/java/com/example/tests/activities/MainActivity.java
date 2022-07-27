@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
     private RelayDAO relayDAO;
     private static SocketClient socketClient; // static para ser recuperável
 
-    public static SocketClient getSocketClient(){ return socketClient; }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
     public void clearTerminal(){
         runOnUiThread(() -> txtOutput.setText(" > "));
     }
+
+    public static SocketClient getSocketClient(){ return socketClient; }
 
     public void addRelay() {
 

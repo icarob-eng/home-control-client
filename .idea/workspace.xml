@@ -14,7 +14,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e04bc3ed-3c19-4ff9-9103-428a9f39aea6" name="Default Changelist" comment="Remoção de RecyclerItemClickListener.java">
+    <list default="true" id="e04bc3ed-3c19-4ff9-9103-428a9f39aea6" name="Default Changelist" comment="Refatoração de MainActivity">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tests/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tests/activities/MainActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658951143361</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refatoração de MainActivity">
+      <created>1658952641472</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1658952641472</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -236,6 +243,7 @@
     <MESSAGE value="Melhorei a activity_main e adicionei o recycler" />
     <MESSAGE value="update .gitignore" />
     <MESSAGE value="Remoção de RecyclerItemClickListener.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remoção de RecyclerItemClickListener.java" />
+    <MESSAGE value="Refatoração de MainActivity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refatoração de MainActivity" />
   </component>
 </project>
