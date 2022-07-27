@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Projects/home-control-client/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Projects/home-control-client/app/src/main/res/layout/activity_nw_setup.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Projects/home-control-client/app/src/main/res/layout/relay_item.xml" value="0.36666666666666664" />
         <entry key="..\:/home-control-client/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.1775" />
         <entry key="..\:/home-control-client/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/home-control-client/app/src/main/res/layout/relay_item.xml" value="0.33" />
