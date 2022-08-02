@@ -1,10 +1,14 @@
-package com.example.tests;
+package com.example.tests.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.tests.R;
+import com.example.tests.SocketClient;
+import com.example.tests.activities.MainActivity;
 
 public class NetworkSetup extends AppCompatActivity {
     private Button btnAddNw, btnRmNw, btnBack;
