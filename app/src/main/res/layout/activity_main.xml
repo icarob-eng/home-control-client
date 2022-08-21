@@ -4,146 +4,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
-    <Button
-        android:id="@+id/btnPing"
+    <EditText
+        android:id="@+id/edit_ip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Ping"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/btnReset" />
-
-    <Button
-        android:id="@+id/btnLED"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="LED"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/btnPing" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Outputs:"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/btnPing" />
-
-    <TextView
-        android:id="@+id/txtOutput"
-        style="@style/Widget.MaterialComponents.TextView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        android:overScrollMode="always"
-        android:scrollbars="vertical"
-        android:text="> Iniciando...\n"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="IP"
+        android:padding="20sp"
+        android:layout_margin="20dp"
+        android:text="10.0.0.120"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/edit_port"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="IP:"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/fieldIP"
+        android:id="@+id/edit_port"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:width="150dp"
-        android:ems="10"
-        android:minHeight="48dp"
-        android:text="10.0.0.120"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3" />
+        android:hint="Port"
+        android:padding="20sp"
+        android:layout_margin="20dp"
+        android:text="5000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edit_ip"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnRelay1"
+        android:id="@+id/btn_LED"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="Relê D1"
-        app:layout_constraintEnd_toStartOf="@+id/btnRelay2"
-        app:layout_constraintTop_toTopOf="@+id/btnPing" />
+        app:layout_constraintTop_toBottomOf="@id/edit_ip"
+        app:layout_constraintEnd_toStartOf="@id/btn_ping"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="#6A1717"
+        android:text="LED"
+        android:textStyle="bold"/>
+    <Button
+        android:id="@+id/btn_ping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:text="ping"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_ip"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        />
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:text="Reset"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_ip"
+        app:layout_constraintStart_toEndOf="@id/guideline2"
+        />
+    <ImageButton
+        android:id="@+id/btn_nw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/btn_reset"
+        app:layout_constraintTop_toBottomOf="@id/edit_port"
+        android:layout_marginTop="23dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_baseline_settings_24"/>
+    <ImageButton
+        android:id="@+id/btn_addrelay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_nw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/recycler_relays"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_baseline_add_24"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_relays"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_LED"
+        tools:listitem="@layout/relay_item" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
+        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="32dp" />
+        app:layout_constraintGuide_percent="0.5"/>
 
-    <Button
-        android:id="@+id/btnReset"
+    <ImageButton
+        android:id="@+id/btn_clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Reset Connection"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/fieldPort" />
-
-    <Button
-        android:id="@+id/btnClear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Clear Terminal"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_baseline_clean_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnReset"
-        app:layout_constraintTop_toTopOf="@+id/btnReset" />
+        app:layout_constraintTop_toBottomOf="@+id/recycler_relays" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Port:"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+    <LinearLayout
+        android:id="@+id/linearlayout_terminal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_clear"
+        android:orientation="horizontal"
+        android:padding="1dp">
 
-    <EditText
-        android:id="@+id/fieldPort"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:text="5000"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/fieldIP"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        <TextView
+            android:id="@+id/txt_output"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:fontFamily="monospace"
+            android:textColor="@color/green"
+            android:textSize="14sp"
+            android:text=" > "/>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btnRelay2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Relê D2"
-        app:layout_constraintEnd_toEndOf="@+id/btnClear"
-        app:layout_constraintTop_toTopOf="@+id/btnRelay1" />
 
-    <Button
-        android:id="@+id/btnNw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Configurar redes"
-        app:layout_constraintStart_toStartOf="@+id/btnRelay1"
-        app:layout_constraintTop_toTopOf="@+id/btnLED" />
 </androidx.constraintlayout.widget.ConstraintLayout>

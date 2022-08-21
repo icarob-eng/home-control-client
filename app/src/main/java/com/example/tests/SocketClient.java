@@ -1,5 +1,7 @@
 package com.example.tests;
 
+import com.example.tests.activities.MainActivity;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
