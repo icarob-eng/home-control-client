@@ -15,14 +15,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e04bc3ed-3c19-4ff9-9103-428a9f39aea6" name="Default Changelist" comment="Refatoração de MainActivity">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tests/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tests/activities/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[e3aebf0a0421]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -82,6 +82,14 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+        <option value="dev" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1zQniV4x6hWJqYHfib0ZIMl8dJE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
